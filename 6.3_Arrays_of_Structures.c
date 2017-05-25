@@ -35,7 +35,7 @@ int main()
 	
 	while (getword(word, MAXWORD) != EOF)
 		if(isalpha(word[0]))
-			if((n= binsearcj(word, keytab, NKEYS)) >= 0)
+			if((n= binsearch(word, keytab, NKEYS)) >= 0)
 				keytab[n].count++;
 	for(n=0; n < NKEYS; n++)
 		if (keytab[n].count >0)
@@ -64,7 +64,7 @@ int binsearch(char* word, struct key tab[], int n)
 	return -1;
 }
 
-*getword 함수는 사용자입력으로 받은 문자나 단어를 갖는 함수 
+*getword 함수는 사용자입력으로 받은 캐릭터를 Char*포인터 w의 두번째 주소값의 자리로 받는 함수 
 
 int getword(char *word, int lim)
 {
@@ -72,6 +72,13 @@ int getword(char *word, int lim)
 	void ungetch(int);
 	char *w = word;
 
+//사용자로부터 받은 문자를 c에 할당하고 c가 공백이 아니면 다음으로 넘어 간다
+//c가 EOF가 아니면 변수w의 두번째 주소값에 c를 할당하라
+//c가 문자가아니면 w주소값에 null을 넣어라 c가문자이면 c를 반환하라
+//포인터변수w의 한계값-1 값이 0보다 크면 w포인터를 1씩증가시켜라
+//사용자로부터 입력받은 값이 숫자나 문자가 아니면 w포인터주소값의 자리에 받지않는다 그리고 for문종료
+//w포인터주소값에 null을 할당하라 
+//word의 첫번째 배열의 값을 반환하라 
 	while (isspace( c = getch()));
 	if (c != EOF)
 		*w++ =c;
@@ -80,7 +87,7 @@ int getword(char *word, int lim)
 		return c;
 	}
 	for (; --lim >0; w++)
-		if(!isalnum(*w =getcj())){
+		if(!isalnum(*w =getch())){
 			ungetch(*w);
 			break;
 		}
