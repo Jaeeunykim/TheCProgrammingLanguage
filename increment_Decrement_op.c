@@ -1,6 +1,6 @@
 Increment and Decrement Operators(증감연산자)
 
-	squeeze함수는 문자열중에 인자로있는 캐릭터문자가 있으면 제외하는 함수입니다. 예를 들어 다음에 인자가("hello",l) 있다면 결과는 hel로 나오게 됩니다
+	squeeze함수는 문자열중에 인자로있는 캐릭터문자가 있으면 제외하는 함수입니다. 예를 들어 다음에 인자가("hello",'l') 있다면 결과는 heo로 나오게 됩니다
 
 void squeeze(char s[], int c)
 {	
