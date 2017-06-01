@@ -18,7 +18,9 @@ int getline(void);
 void copy(void);
 
 
-//main함수에서는 getline함수를 이용해 반환된 값을 len에 할당해주고 할당된 값이 있고 그 값이 max(0)보다 크면 len의 값을 max에 assign해줍니다. 그리고 copy함수를 이용해 line의 캐릭터배열을 longest에 할당해주고 longest 배열을 출력합니다
+//main함수에서는 getline함수를 이용해 반환된 값을 len에 할당해주고
+//할당된 값이 있고 그 값이 max(0)보다 크면 len의 값을 max에 assign해줍니다. 
+//그리고 copy함수를 이용해 line의 캐릭터배열을 longest에 할당해주고 longest 배열을 출력합니다
 
 //entry point입력하겠습니다
 int main()
@@ -38,6 +40,15 @@ int main()
 	return 0;
 }
 
+//getline함수는 사용자가 입력한 문자열의 캐릭터개수를 newline이나올때까지 세고, 
+//newline이 입력되면 null를 추가하고 null까지의 캐릭터수를 반환하는 함수입니다 
+
+
+//getline 함수는 인자2개가 있습니다.
+//첫번째 인자는 char배열형 s인자이고 두번째 인자는 int형 lim(한계값)를 인자로 가지고 있습니다
+//return값은 int형입니다
+// '\0'(NULL)은 종료시점을 확인하기위해 입력됩니다
+
 int getline(char s[], int lim)
 {
 
@@ -54,6 +65,9 @@ int getline(char s[], int lim)
 	return i;
 
 }
+
+//copy함수는 2개의 인자를 가지고있습니다. 첫번째는 char[]형to이고 나머지는 char[]형 from입니다
+//from배열을 to배열에 복사하는 함수 
 
 void copy(char to[], char from[])
 {
