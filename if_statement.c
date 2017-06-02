@@ -47,6 +47,8 @@ int binsearch (int x, int v[], int n)
 	- switch문은 if~else문과 유사하지만 좀더 간결히 사용할수 있습니다
 	- 그리고 중간에 있는 break 키워드는 switch문을 종료하게 하고,
 	- default 키워드는 해당하는 case문이 없을때 기본적으로 수행되는 코드입니다
+	- switch 문에는 정수형만 가능합니다 
+	- 비교연산자 사용이 불가능합니다 
 int main() 
 {
 	int c, nwhite, nother, ndigit[10];
